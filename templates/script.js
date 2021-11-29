@@ -46,6 +46,7 @@ function myMove() {
 function attach(id, text) {
     // Get the modal
     var modal = document.getElementById("popup");
+    var electron = document.getElementById(id);
 
     // Get the button that opens the modal
     var btn = document.getElementById(id);
@@ -59,6 +60,7 @@ function attach(id, text) {
         if(!audio.paused) {
            audio.pause();
         }
+        electron.style.color = "white";
     }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
