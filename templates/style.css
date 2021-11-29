@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+}
+.background {
+    background-image: url('/image/cloud.jpg');
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 0 0 0;
+    position: relative;
+}
+.battery {
+    background-image: url('/image/battery.png');
+    background-size: 100% 100%;
+    width: 400px;
+    height: 400px;
+    top: 25%;
+    left: calc(50% - 200px);
+    position: absolute;
+    opacity: 0.5;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.electron {
+    /*background-image: url('/image/electron.png');*/
+    /*background-size: 100% 100%;*/
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+ /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
