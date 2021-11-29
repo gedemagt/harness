@@ -2,6 +2,7 @@
 
 audio = new Audio('/audio/Regnvejrssang.mp4');
 audio.loop = true;
+audio.muted = false;
 
 let position = {
     e1: 0,
@@ -53,7 +54,7 @@ function attach(id, text) {
     var modalText = document.getElementById("modalText")
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
-        modalText.innerText = text;
+        modalText.innerHTML = text;
         modal.style.display = "block";
         if(!audio.paused) {
            audio.pause();
@@ -71,14 +72,9 @@ function attach(id, text) {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-
     myMove();
-    if(audio.paused) {
-       audio.play();
-    }
-
-    attach("battery", "Klimaforandringerne er over os, og mens jorden smelter skal vi hastigt finde nye og bæredygtige energikilder. Fremtiden inden for klimapolitik er vedvarende energikilder som vindenergi, solenergi, bølgeenergi og vandkraft. Vi har lært at høste vejrets energi ved hjælp af blandt andet solceller og vindmøller, men vi har endnu ikke fundet effektive måder at opbevare det på. For hvad gør vi når vinden ikke blæser? Når solen ikke skinner? Når bølgerne ikke går højt? Ja, når vejret er imod os? I værket Harness the weather tematiseres menneskets forsøg på at putte vejrfænomener på batterier. Batterier er fremtiden hvis vi skal leve med vedvarende energikilder. Men hvordan får man energien fra vejret sat i stilstand? Dette værk undersøger absurditeten i menneskehedens forsøg på at tøjle vejret.");
-
+    audio.play();
+    attach("battery", "Klimaforandringerne er over os, og mens jorden smelter skal vi hastigt finde nye og bæredygtige energikilder. Fremtiden inden for klimapolitik er vedvarende energikilder som vindenergi, solenergi, bølgeenergi og vandkraft. Vi har lært at høste vejrets energi ved hjælp af blandt andet solceller og vindmøller, men vi har endnu ikke fundet effektive måder at opbevare det på. For hvad gør vi når vinden ikke blæser? Når solen ikke skinner? Når bølgerne ikke går højt? Ja, når vejret er imod os? I værket <i>Harness the weather</i> tematiseres menneskets forsøg på at putte vejrfænomener på batterier. Batterier er fremtiden hvis vi skal leve med vedvarende energikilder. Men hvordan får man energien fra vejret sat i stilstand? Dette værk undersøger absurditeten i menneskehedens forsøg på at tøjle vejret.");
 });
 
 
