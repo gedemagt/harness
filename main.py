@@ -45,7 +45,7 @@ def index():
     delta_deg = 360.0 / n
 
     thetas = [x * delta_deg * math.pi / 180.0 for x in range(n)]
-    rs = [random.randrange(25, 50) for _ in range(n)]
+    rs = [random.randrange(25, 40) for _ in range(n)]
 
     pos = [(math.cos(t)*r + 50, math.sin(t)*r + 50) for t,r in zip(thetas, rs)]
 
