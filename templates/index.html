@@ -9,7 +9,7 @@
     <div class="background">
         <button id="battery" class="battery"></button>
 
-        {% for n in range(19) %}
+        {% for n in range(pos | length) %}
             <button id="e{{ n+1 }}" class="electron" style="left: {{ pos[n][0] }}%; top:{{ pos[n][1] }}%">e<sup>-</sup></button>
         {% endfor %}
     </div>
