@@ -1,4 +1,8 @@
-from flask import Flask, render_template, send_from_directory, send_file
+import os
+import random
+import math
+
+from flask import Flask, render_template, send_from_directory, send_file, jsonify
 
 app = Flask(__name__, static_folder='static')
 
@@ -23,9 +27,29 @@ def css(path):
     return send_from_directory("templates", path)
 
 
+@app.route("/content")
+def content():
+    result = []
+    for p in sorted(os.listdir("static/texts")):
+        with open(f"static/texts/{p}") as f:
+            result.append(f.read())
+
+    return jsonify(result)
+
+
 @app.route("/")
 def index():
-    return render_template('index.html')
+
+    n = len(os.listdir("static/texts"))
+
+    delta_deg = 360.0 / n
+
+    thetas = [x * delta_deg * math.pi / 180.0 for x in range(n)]
+    rs = [random.randrange(25, 50) for _ in range(n)]
+
+    pos = [(math.cos(t)*r + 50, math.sin(t)*r + 50) for t,r in zip(thetas, rs)]
+
+    return render_template('index.html', pos=pos)
 
 
 if __name__ == "__main__":
